@@ -1,1 +1,1 @@
-# curso_js_iniciante_mestre
+# Curso de JavaScript Completo do iniciante ao mestre
