@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo 1</title>
+  </head>
+  <body>
+    <main>
+      <h1>Cruso javascript <span></span></h1>
+      <section>
+        <h2>Subtitulos h2</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+          voluptatem, commodi, laborum possimus dolorum quia laboriosam nobis
+          iusto illo assumenda qui voluptatum doloribus, ipsa cupiditate.
+          Laboriosam accusamus eos placeat eum?
+        </p>
+      </section>
+
+      <section>
+        <h3>Subtitulo h3</h3>
+        <p class="paragrafo">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quisquam
+          illum debitis odio deleniti id explicabo, iure similique optio saepe
+          quis voluptates quae qui voluptas delectus itaque non eveniet ad?
+        </p>
+        <p class="paragrafo">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quisquam
+          illum debitis odio deleniti id explicabo, iure similique optio saepe
+          quis voluptates quae qui voluptas delectus itaque non eveniet ad?
+        </p>
+        <p class="paragrafo">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quisquam
+          illum debitis odio deleniti id explicabo, iure similique optio saepe
+          quis voluptates quae qui voluptas delectus itaque non eveniet ad?
+        </p>
+      </section>
+    </main>
+
+    <script>
+      document.querySelector("span").textContent = "Mestre";
+      const paragrafos = document.querySelectorAll(".paragrafo");
+
+      paragrafos.forEach((paragrafo) => {
+        paragrafo.textContent = "Lorem ipsum dolor";
+      });
+    </script>
+  </body>
+</html>
