@@ -1,4 +1,5 @@
 (function () {
+  "use strict";
   const campoEmail = document.getElementById("txtEmail");
   const botaoNewslatter = document.getElementById("btn");
   const campoMensagemDeSucesso = document.getElementById("newsletterFeedback");

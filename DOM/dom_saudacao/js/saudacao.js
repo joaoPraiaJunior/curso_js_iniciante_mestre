@@ -1,4 +1,5 @@
 (function () {
+  "use strict";
   const nomeUsuario = "João";
   const elementoHeader = document.querySelector(".hero");
 
