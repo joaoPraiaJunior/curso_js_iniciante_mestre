@@ -30,6 +30,42 @@ body{
     border-bottom: 2px solid white;
 }
 
+#newsletterForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+#newsletterForm input,
+#newsletterForm button{
+    font-size: 1em;
+    padding: .5em;
+    border: none;
+}
+#newsletterForm button{
+    background-color: #70757b;
+}
+#newsletterForm input{
+    background-color: #9f9f9f;
+}
+#newsletterForm label{
+    margin-right: .5em;
+}
+
+#newsletterForm input:focus{
+    outline: none;
+    background-color: white;
+}
+#newsletterFeedback{
+    font-size: 1.3em;
+    text-shadow: 2px 2px 1px #333;
+
+}
+#newsletterFeedback p{
+    margin: 10px;
+    display: inline-block;
+}
 
 
 .top-bar{
