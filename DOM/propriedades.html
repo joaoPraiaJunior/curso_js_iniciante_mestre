@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propriedades</title>
+  </head>
+  <body>
+    <main>
+      <h2>Propriedades</h2>
+      <p>Trabalhando com propriedades</p>
+      <form action="#">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" id="nome" placeholder="nome" />
+        <br /><br />
+        <label for="email">E-mail: </label>
+        <input type="email" name="email" id="email" placeholder="e-mail" />
+        <br /><br />
+        <label for="valida-contrato">Li e aceito o contrato</label>
+        <input type="checkbox" name="contrato" id="valida-contrato" />
+        <br /><br />
+        <textarea name="contrato" id="contrato" cols="30" rows="10">
+          Este contrato...
+        </textarea>
+        <button id="btn">Enviar</button>
+      </form>
+    </main>
+
+    <script>
+      const nome = document.getElementById("nome");
+      const contrato = document.getElementById("contrato");
+      const validaContratoLabel = document.querySelector(
+        'label[for="valida-contrato"]'
+      );
+      const validaContrato = document.getElementById("valida-contrato");
+      const btn = document.getElementById("btn");
+      btn.setAttribute("disabled", true);
+      contrato.readOnly = true;
+      console.log(validaContratoLabel.htmlFor);
+      nome.minLength = 3;
+      nome.classList.add("nome");
+
+      function habilitarBotaoEnvio() {
+        //validaContrato.checked === true ? btn.disabled = false : btn.disabled = true;
+        btn.disabled = !validaContrato.checked;
+      }
+
+      validaContrato.addEventListener("change", habilitarBotaoEnvio, false);
+    </script>
+  </body>
+</html>
