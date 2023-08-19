@@ -15,4 +15,4 @@ console.log(concatenarArrays);
 let arr3 = [].concat(arr1);
 console.log((arr3[arr3.length] = "novo valor"));
 
-console.log(arr1, arr3)
+console.log(arr1, arr2, arr3)
