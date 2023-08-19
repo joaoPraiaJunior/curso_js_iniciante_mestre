@@ -6,7 +6,7 @@ console.log(arr.indexOf(5));
 //Método lastIndexOf retorna o último índice/posição do item perguntado
 console.log(arr.lastIndexOf(5));
 
-//Esses dois métodos se não encontrarem nada, vai retorar -1
+//Esses dois métodos se não encontrarem nada, vai retornar -1
 console.log(arr.indexOf(5555));
 
 //Para retornar um booleano, pode utilizar o > -1
