@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array from e Array of</title>
+  </head>
+  <body>
+    <main>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi rerum
+        facilis nulla perferendis a vitae, hic temporibus asperiores aut omnis
+        non ex? Excepturi sunt omnis optio labore consequatur saepe ad?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint odio quae
+        a esse unde minima similique dolor? Obcaecati quibusdam repellat,
+        numquam tempore, aliquid, aliquam in quasi quaerat recusandae tempora
+        omnis.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+        repudiandae atque nesciunt laboriosam quam sit sint voluptas sunt
+        aperiam soluta provident, dolorem illum laborum consectetur suscipit
+        numquam exercitationem unde nemo?
+      </p>
+    </main>
+
+    <script>
+      //Array()  é uma função  construtora nativa e o of e from residem na função;
+      let arrayOriginalParaFrom = new Array(1, 2, 3);
+
+      //Array of ele  cria um novo array a partir de um array.
+      let novoArrayDeFrom = Array.from(arrayOriginalParaFrom);
+      novoArrayDeFrom.push(4, 5);
+      console.log(novoArrayDeFrom);
+
+      //Array of serve para criar um novo array mas só passa um número como argumnto.
+      let arrayOriginalParaOf = new Array(3); //Cria um array com três posições vazias
+      let novoArrayDeOf = Array.of(3);
+      console.log(novoArrayDeOf);
+
+      //Array.from para utilizar em arrays likes/ nodeList
+      const paragrafos = document.querySelectorAll("p");
+      console.log(paragrafos, paragrafos.length);
+
+      paragrafos.forEach((paragrafo, indice) => {
+        paragrafo.textContent = `${++indice} - ${paragrafo.textContent}`;
+      });
+
+      //O array like ou nodeList não é possível utilizar métodos de arrays nele e para isso utiliza-se o Array.form
+      let paraGrafosTransformados = Array.from(paragrafos);
+      let utilizarMetodoSlice = paraGrafosTransformados.slice(0, 2);
+      console.log(utilizarMetodoSlice);
+    </script>
+  </body>
+</html>
