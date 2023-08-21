@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+      .underlined {
+        border-bottom: 3px solid currentColor;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div
+        class="hero center card-panel materialize-red darken-4 white-text z-depth-3"
+      >
+        <h1 class="materialize-red-text text-lighten-3">
+          Curso Javascript Completo
+        </h1>
+      </div>
+      <h2 class="materialize-red-text text-lighten-2 underlined">
+        Dados de Alunos
+      </h2>
+
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th data-js-nota="nota1">Nota 1</th>
+            <th data-js-nota="nota2">Nota 2</th>
+            <th data-js-nota="nota3">Nota 3</th>
+            <th data-js-nota="nota4">Nota 4</th>
+            <th data-js-nota="media">Média</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+
+    <script src="js/calc_obj.js"></script>
+  </body>
+</html>
