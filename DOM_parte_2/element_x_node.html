@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Element x Node</title>
+  </head>
+  <body>
+    <div class="container">
+      <p>Teste 1</p>
+      <p>Loren <a href="#">Link</a></p>
+      <p>Teste 2</p>
+
+      <h2>Título</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+        <li>
+          <ul>
+            <li>Teste 3</li>
+            <li>teste 4</li>
+            <li>teste 5</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+
+  <script>
+    /* Há 12 tipos diferentes de "nós" no DOM HTML
+        (elemento, atributo, texto, comentário etc)
+        Um elemento é só um tipo específico de nó
+        a partir do nó pode-se navegar
+
+        Node. parentNode, parentElement, nextSibling, previousSibling
+
+        Node. childNodes, children, firstChild, fristElementChild, lastChild, lastElementChild, hasChildNodes()
+
+        Adicionar nós
+        ParentNode. prepend(), appednd()
+
+        Node. appendChild(), insertBefore(), cloneNode()
+        childNode. after(), before()
+
+        Element. insertAdjacentElement(), insertAdjacentHTML(), insertAdjcentText()
+
+        remover nós
+        Node. removeChild(), replaceChield() = pode adicionar também, pois vai substituir um filho pelo outro
+
+        ChildNode. remove() não funciona no IE
+
+        Criar nós 
+        document. creatElement(), creatAttribute(), creatTextNode(), write()
+    */
+
+    //Navegando pelo DOM parentElement x parentNode
+    console.log(document.body);
+    console.log(document.body.parentElement);
+    console.log(document.body.parentNode);
+    console.log(document.body.parentNode === document.body.parentElement);
+    const html = document.body.parentElement;
+
+    console.log(html.parentElement);
+    console.log(html.parentNode);
+
+    //nextSibling, previousSibling
+
+    const h2 = document.querySelector("h2");
+    console.log(h2.nextElementSibling); //Proximo Irmão
+    console.log(h2.previousElementSibling); //Irmão anterior
+
+    //Children, ChildNodes, firstChild, firstElementChild
+
+    const link = document.querySelector("a");
+    const li = document.querySelector("ul");
+
+    console.log(li.children); //Retorna os nós que são elementos
+    console.log(li.childNodes); //Retorna todos os nós como até quebras de linhas
+
+    console.log(li.firstChild); //Retorna o primiro filho de todos os nós possíveis
+    console.log(li.firstElementChild); //Retorna o primeiro filho do nó que é elemento
+
+    //Criar DOM através dos nós
+    const criarLi = document.createElement("li");
+    const atributoId = document.createAttribute("id");
+    atributoId.value = "id-criado";
+    criarLi.setAttributeNode(atributoId);
+    criarLi.setAttribute("class", "li__texto");
+    const texto = document.createTextNode("Inserindo texto nos  nós");
+    criarLi.appendChild(texto);
+    li.prepend(criarLi); //Não funciona no IE insire antes do primeiro filho
+    console.log(criarLi);
+
+    const titulo2 = document.createElement("h3");
+    titulo2.textContent = "Novo título";
+
+    const container = document.querySelector(".container");
+    container.insertBefore(titulo2, container.firstElementChild); //Pode ser usado no lugar de prepend caso for dar suporte ao IE
+
+    //O método cloneNode() ele clona um elemeto e caso queira que clone os filhos passar o parâmento true cloneNode(true)
+
+    const span = document.createElement("span");
+    span.textContent = "Span de texto";
+
+    container.after(span); // métodos after() e before() não vão funcionar no IE11
+
+
+    //insertAdjacentHTML vai inserir o elemento conforme os parâmetros passados. Nunca insira dados da interface gráfica ou do banco de dados.
+
+    container.insertAdjacentHTML(
+      "beforebegin",
+      "<strong>Texto de teste 1</strong>"
+    );
+    container.insertAdjacentHTML(
+      "afterbegin",
+      "<strong>Texto de teste 2</strong>"
+    );
+    container.insertAdjacentHTML(
+      "beforeend",
+      "<strong>Texto de teste 3</strong>"
+    );
+    container.insertAdjacentHTML(
+      "afterend",
+      "<strong>Texto de teste 4</strong>"
+    );
+
+
+    //Remoção dos nós
+    //span.remove() esse método não funciona no IE;
+
+    li.removeChild(criarLi) //Remove o filho a partir de um nó funciona crossbrowsers
+
+  </script>
+</html>
