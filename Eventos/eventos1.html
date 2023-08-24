@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <button id="btn1" type="button">Botao 1</button>
+        <button id="btn2" type="button">Botao 2</button>
+        <button id="btn3" type="button">Botao 3</button>
+      </div>
+      <p>Botões</p>
+      <div class="container">
+        <button class="btn" type="button">Botao 1</button>
+        <button class="btn" type="button">Botao 2</button>
+        <button class="btn" type="button">Botao 3</button>
+      </div>
+    </main>
+
+    <script>
+      /*
+        DOM Level 0
+        const btn = document.querySelecton("button")
+        btn.onClick = funcao
+        */
+
+      //DOM level 2
+
+      document.addEventListener(
+        "click",
+        function () {
+          console.log("clicou no document");
+        },
+        false
+      );
+
+      /*
+      O evento tem as fase de captura e borbulhamento. Na captura o evento é capturando quando 
+      o evento está propagando para baixo. No borbulhamento, é de baixo para cima. O valor default é false, isto é, o de borbulhamento.
+      
+      */
+
+      const div = document.querySelector("div");
+      div.addEventListener(
+        "click",
+        function () {
+          console.log("clicou na div");
+        },
+        false
+      );
+
+      //Os hanndlres dos eventos podem receber um objeto do tipo evento.
+      const btn1 = document.getElementById("btn1");
+      btn1.addEventListener(
+        "click",
+        function (evento) {
+          evento.stopPropagation(); //Para a propagação/borbulhamento do evento.
+          console.log("clicou no botão");
+        },
+        false
+      );
+
+      //Delegaçao de eventos é útil quando temos muitos elementos filhos. Dessa forma, delegamos o evento para o elemento pai
+
+      const containerBtns = document.querySelector(".container");
+      containerBtns.addEventListener("click", (evento) => {
+        evento.stopPropagation();
+        if (evento.target.nodeName === "BUTTON")
+          console.log(
+            evento.target,
+            evento.target.className,
+            evento.currentTarget,
+            this
+          );
+
+        /*
+          O target é o elemento alvo e o currentTarget é o elemento que foi atrelada a função de evento 
+          e a mesma coisa com o this no caso de um função comum. No caso de uma arrow function, o this passa a ser o elemento window
+          isto é, deixa de ser dinâmico;
+          */
+      });
+    </script>
+  </body>
+</html>
