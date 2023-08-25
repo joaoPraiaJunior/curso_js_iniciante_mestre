@@ -1,3 +1,4 @@
+// Tipos de dados primitivos strings, number(int, floats), boolean, symbol. Dados primitivos são representados por objetos e não possuem métodos.
 //"use strict"; // javascript em modo estrito
 
 console.log("JavaScript funcionando 2023");
@@ -62,4 +63,24 @@ const objThis = {
   testarThis: testarThis,
 };
 
-objThis.testarThis() // aqui o this será o próprio objeto no caso da arrow function o objeto this passa a ser um objeto window global;
+objThis.testarThis(); // aqui o this será o próprio objeto no caso da arrow function o objeto this passa a ser um objeto window global;
+
+//Valores Truth e Falsy. Falsy são o 0, "", NaN, undefined, null e false. Já o Truth são todos os demais.
+
+// Undefined x null. undefined significa que uma variável foi declarada, mas não atribuída. Enquanto null é utilizado de forma intencional para representar a ausência de valor
+let variavelTeste;
+console.log(variavelTeste);
+console.log(typeof variavelTeste);
+variavelTeste = null
+console.log(variavelTeste);
+console.log(typeof variavelTeste);
+
+
+//Valor x referência. Variáveis que apontam para um dado primitivo, elas armazenam um valor. Variáveis que armazenam array ou objeto apontam para uma referência na memória.
+
+let array1 = []
+let array2 = []
+console.log(array1 === array2) // A comparação é falsa porque cada variável de array é um espaço na memória diferentes.
+let array3 = array2
+array3.push(1)
+console.log(array2, array3) // O array2 também é modificado porque a mesma referência na memória é atribuida no array3
