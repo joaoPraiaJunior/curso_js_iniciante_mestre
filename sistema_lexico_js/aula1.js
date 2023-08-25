@@ -24,7 +24,7 @@ function foo() {
 
 foo();
 
-console.log(x); // Por não declarar a variável x, ela passa para o escopo global... Porém, quando é urilizado no modo estrito o js barra essa váriável mostrando um erro.
+console.log(x); // Por não declarar a variável x, ela passa para o escopo global... Porém, quando é utilizado no modo estrito o js barra essa váriável mostrando um erro.
 
 //Tomar cuidado ao utilizar parâmetros quando não está no modo estrito
 
