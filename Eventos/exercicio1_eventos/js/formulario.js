@@ -54,7 +54,7 @@
 
   function contadorDecaracteresDoCampo() {
     let caracteresDigitadosNoInput =
-      parseInt(campoDescricao.getAttribute("maxlength")) -
+      parseInt(numeroMaximoDoContador) -
       parseInt(campoDescricao.value.length);
     setaQuantidadeDeCaracteresDoContador(caracteresDigitadosNoInput);
   }
