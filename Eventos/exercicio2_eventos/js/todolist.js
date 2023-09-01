@@ -18,6 +18,12 @@
     `${elementos.itensDalista}`
   );
 
+  const hoje = new Date();
+  const dia = hoje.getDate().toString().padStart(2, "0");
+  const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+  const ano = hoje.getFullYear();
+  const dataAtual = `${dia} / ${mes} / ${ano}`;
+
   const objetoDeItensDalista = pegaOsDadosSalvos();
 
   function pegaOsDadosSalvos() {
@@ -29,7 +35,7 @@
       : [
           {
             nome: "Tarefa 1",
-            dataDeCriacao: Date.now(),
+            dataDeCriacao: dataAtual,
             completa: false,
           },
         ];
@@ -45,7 +51,7 @@
     evento.preventDefault();
     objetoDeItensDalista.push({
       nome: formulario.tarefa.value,
-      dataDeCriacao: Date.now(),
+      dataDeCriacao: dataAtual,
       completa: false,
     });
     formulario.tarefa.value = "";
@@ -69,6 +75,7 @@
 
     const item = document.createElement("li");
     const paragrafo = document.createElement("p");
+    const dataDaTarefa = document.createElement("time");
     const botaoDeCompletarTarefa = document.createElement("button");
     const iconeDechecagem = document.createElement("i");
     const botaoDeEditarItem = document.createElement("i");
@@ -80,6 +87,7 @@
 
     item.className = "todo-item";
     paragrafo.className = "task-name";
+    dataDaTarefa.className = "task-data";
     botaoDeCompletarTarefa.className = "button-check";
     iconeDechecagem.className = `fas fa-check ${
       tarefa.completa === false ? "displayNone" : ""
@@ -101,10 +109,12 @@
     botaoDeCancelarEdicao.setAttribute("data-js", "cancelar");
 
     paragrafo.textContent = tarefa.nome;
+    dataDaTarefa.textContent = tarefa.dataDeCriacao;
     campoDeEdicao.value = tarefa.nome;
     botaoDeEnviarItemEditado.textContent = "Enviar";
     botaoDeCancelarEdicao.textContent = "Cancelar";
 
+    paragrafo.appendChild(dataDaTarefa);
     botaoDeCompletarTarefa.appendChild(iconeDechecagem);
 
     containerDeEdicao.appendChild(campoDeEdicao);
@@ -138,7 +148,7 @@
 
     const indexDoItemAtual = [...itensDaLista].indexOf(itemAtual);
     const boxDeEdicao = itemAtual.querySelector(`${elementos.boxDeEdicao}`);
-    const campoDeEdicao = document.querySelector(`${elementos.campoDeEdicao}`);
+    const campoDeEdicao = document.querySelectorAll(`${elementos.campoDeEdicao}`);
     const todosCamposDeEdicao = listaDeTarefas.querySelectorAll(
       `${elementos.boxDeEdicao}`
     );
@@ -164,7 +174,7 @@
           campos.style.display = "none";
         });
         boxDeEdicao.style.display = "flex";
-        campoDeEdicao.focus();
+        campoDeEdicao[indexDoItemAtual].focus();
 
         setarNovosDados();
       },
@@ -177,13 +187,12 @@
         setarNovosDados();
       },
       enviar: function () {
-        objetoDeItensDalista[indexDoItemAtual].nome = campoDeEdicao.value;
+        objetoDeItensDalista[indexDoItemAtual].nome = campoDeEdicao[indexDoItemAtual].value;
         redenrizacaoDeTarefas();
         setarNovosDados();
       },
       cancelar: function () {
         boxDeEdicao.removeAttribute("style");
-        campoDeEdicao.value = objetoDeItensDalista[indexDoItemAtual].nome;
       },
     };
 
