@@ -148,8 +148,8 @@
 
     const indexDoItemAtual = [...itensDaLista].indexOf(itemAtual);
     const boxDeEdicao = itemAtual.querySelector(`${elementos.boxDeEdicao}`);
-    const campoDeEdicao = document.querySelectorAll(`${elementos.campoDeEdicao}`);
-    const todosCamposDeEdicao = listaDeTarefas.querySelectorAll(
+    const campoDeEdicao = itemAtual.querySelector(`${elementos.campoDeEdicao}`);
+    const todosBoxesDeEdicao = listaDeTarefas.querySelectorAll(
       `${elementos.boxDeEdicao}`
     );
     const iconeDechecagem = itemAtual.querySelector(
@@ -170,11 +170,11 @@
         setarNovosDados();
       },
       editar: function () {
-        todosCamposDeEdicao.forEach((campos) => {
-          campos.style.display = "none";
+        todosBoxesDeEdicao.forEach((boxes) => {
+          boxes.style.display = "none";
         });
         boxDeEdicao.style.display = "flex";
-        campoDeEdicao[indexDoItemAtual].focus();
+        campoDeEdicao.focus();
 
         setarNovosDados();
       },
@@ -187,7 +187,7 @@
         setarNovosDados();
       },
       enviar: function () {
-        objetoDeItensDalista[indexDoItemAtual].nome = campoDeEdicao[indexDoItemAtual].value;
+        objetoDeItensDalista[indexDoItemAtual].nome = campoDeEdicao.value;
         redenrizacaoDeTarefas();
         setarNovosDados();
       },
