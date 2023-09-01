@@ -149,6 +149,10 @@ input[type="submit"]:hover {
     letter-spacing: 0;
 }
 
+.task-completa {
+    text-decoration: line-through;
+}
+
 .fa-edit{
     grid-column: 3/4;   
 }

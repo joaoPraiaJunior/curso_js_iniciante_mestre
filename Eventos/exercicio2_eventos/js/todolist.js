@@ -93,7 +93,9 @@
     const botaoDeCancelarEdicao = document.createElement("button");
 
     item.className = "todo-item";
-    paragrafo.className = "task-name";
+    paragrafo.className = `task-name ${
+      tarefa.completa === false ? "" : "task-completa"
+    }`;
     dataDaTarefa.className = "task-data";
     botaoDeCompletarTarefa.className = "button-check";
     iconeDechecagem.className = `fas fa-check ${
@@ -171,10 +173,10 @@
 
         if (objetoDeItensDalista[indexDoItemAtual].completa) {
           iconeDechecagem.classList.remove("displayNone");
-          infosDaTarefa.style.textDecoration = "line-through";
+          infosDaTarefa.classList.add("task-completa");
         } else {
           iconeDechecagem.classList.add("displayNone");
-          infosDaTarefa.style.textDecoration = "none";
+          infosDaTarefa.classList.remove("task-completa");
         }
 
         setarNovosDados();
