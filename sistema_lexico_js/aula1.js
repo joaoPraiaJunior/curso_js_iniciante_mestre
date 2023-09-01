@@ -1,4 +1,4 @@
-// Tipos de dados primitivos strings, number(int, floats), boolean, symbol. Dados primitivos são representados por objetos e não possuem métodos.
+// Tipos de dados primitivos strings, number(int, floats), boolean, symbol. Dados primitivos são representados por valores e não possuem métodos.
 //"use strict"; // javascript em modo estrito
 
 console.log("JavaScript funcionando 2023");
