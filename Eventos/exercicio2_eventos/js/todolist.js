@@ -175,8 +175,6 @@
         });
         boxDeEdicao.style.display = "flex";
         campoDeEdicao.focus();
-
-        setarNovosDados();
       },
 
       deletar: function () {
