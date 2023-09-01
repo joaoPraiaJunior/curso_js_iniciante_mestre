@@ -19,6 +19,6 @@ console.log(arr.includes(5555));
 const metodoFind = arr.find((elementos) => elementos > 10);
 console.log(metodoFind);
 
-//Método find() retorna o index do primeiro valor de array que satisfaça a condição
+//Método findIndex() retorna o index do primeiro valor de array que satisfaça a condição
 const metodoFindIndex = arr.findIndex((elementos) => elementos > 10);
 console.log(metodoFindIndex);
