@@ -10,6 +10,7 @@
     boxDeEdicao: ".editContainer",
     campoDeEdicao: ".editInput",
     iconeDechecagem: ".fa-check",
+    infosDaTarefa: ".task-name"
   };
 
   const formulario = document.querySelector(`${elementos.formulario}`);
@@ -18,11 +19,17 @@
     `${elementos.itensDalista}`
   );
 
-  const hoje = new Date();
-  const dia = hoje.getDate().toString().padStart(2, "0");
-  const mes = String(hoje.getMonth() + 1).padStart(2, "0");
-  const ano = hoje.getFullYear();
-  const dataAtual = `${dia} / ${mes} / ${ano}`;
+  function insereDataEHora() {
+    const hoje = new Date();
+    const dia = hoje.getDate().toString().padStart(2, "0");
+    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+    const ano = hoje.getFullYear();
+    const hora = hoje.getHours();
+    const minutos = hoje.getMinutes();
+    const dataAtual = `${dia} / ${mes} / ${ano} - ${hora}:${minutos}`;
+
+    return dataAtual;
+  }
 
   const objetoDeItensDalista = pegaOsDadosSalvos();
 
@@ -35,7 +42,7 @@
       : [
           {
             nome: "Tarefa 1",
-            dataDeCriacao: dataAtual,
+            dataDeCriacao: insereDataEHora(),
             completa: false,
           },
         ];
@@ -51,7 +58,7 @@
     evento.preventDefault();
     objetoDeItensDalista.push({
       nome: formulario.tarefa.value,
-      dataDeCriacao: dataAtual,
+      dataDeCriacao: insereDataEHora(),
       completa: false,
     });
     formulario.tarefa.value = "";
@@ -155,6 +162,7 @@
     const iconeDechecagem = itemAtual.querySelector(
       `${elementos.iconeDechecagem}`
     );
+    const infosDaTarefa = itemAtual.querySelector(`${elementos.infosDaTarefa}`)
 
     const acaoselecionada = {
       completar: function () {
@@ -163,8 +171,10 @@
 
         if (objetoDeItensDalista[indexDoItemAtual].completa) {
           iconeDechecagem.classList.remove("displayNone");
+          infosDaTarefa.style.textDecoration = "line-through";
         } else {
           iconeDechecagem.classList.add("displayNone");
+          infosDaTarefa.style.textDecoration = "none";
         }
 
         setarNovosDados();
@@ -186,6 +196,8 @@
       },
       enviar: function () {
         objetoDeItensDalista[indexDoItemAtual].nome = campoDeEdicao.value;
+        objetoDeItensDalista[indexDoItemAtual].dataDeCriacao =
+          insereDataEHora();
         redenrizacaoDeTarefas();
         setarNovosDados();
       },

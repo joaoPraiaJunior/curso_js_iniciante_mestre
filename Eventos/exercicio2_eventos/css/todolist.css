@@ -146,6 +146,7 @@ input[type="submit"]:hover {
 
 .task-data {
     font-size: .8rem;
+    letter-spacing: 0;
 }
 
 .fa-edit{
