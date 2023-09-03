@@ -28,7 +28,6 @@
     const botao = document.createElement("button");
     const iconeDeAcaoDoBotao = document.createElement("i");
     iconeDeAcaoDoBotao.className = "fas fa-chevron-down";
-    botao.setAttribute("data-js", "botao");
     botao.appendChild(iconeDeAcaoDoBotao);
     paragrafo.parentElement.appendChild(botao);
     botao.addEventListener("click", function (evento) {
@@ -40,7 +39,6 @@
     const card = evento.currentTarget.parentElement;
     const iconeDeAcaoDoBotao = card.querySelector("i");
     card.classList.toggle("text-hidden");
-    console.log(iconeDeAcaoDoBotao);
     iconeDeAcaoDoBotao.classList.toggle("fa-chevron-down");
     iconeDeAcaoDoBotao.classList.toggle("fa-chevron-up");
 
