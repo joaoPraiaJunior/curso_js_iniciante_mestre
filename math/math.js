@@ -23,5 +23,5 @@ console.log(Math.cbrt(8)) //retorna  raiz cúbica
 
 //Math.random()
 console.log(Math.random()) //retorna um número aleatório
-console.log(Math.floor(Math.random() * 10)) //retorna um número de 0 a 10 arrendondando para baixo
+console.log(Math.floor(Math.random() * 10) + 1) //retorna um número de 1 a 10 arrendondando para baixo
 
