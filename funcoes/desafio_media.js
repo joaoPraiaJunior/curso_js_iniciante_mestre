@@ -13,7 +13,7 @@ function calcularMedia() {
   return media;
 }
 
-console.log(calcularMedia());
+console.log(calcularMedia(5, 10, 8));
 
 /*
 IMC
