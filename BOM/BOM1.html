@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM</title>
+  </head>
+  <body>
+    <h1>BOM</h1>
+
+    <h2>History</h2>
+    <button id="voltar">Voltar</button>
+    <br /><br />
+    <button id="avancar">Avançar</button>
+
+    <br /><br />
+
+    <a href="http://127.0.0.1:5500/cursos_js_udemy/curso_js_iniciante_mestre/"
+      >Navegar pelas aulas</a
+    >
+
+    <br /><br />
+    <hr />
+
+    <h2>Métodos window</h2>
+    <ul
+      style="
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        width: 350px;
+        padding-left: 0;
+      "
+    >
+      <li><button id="alert">Alert</button></li>
+      <li><button id="confirm">Confirm</button></li>
+      <li><button id="prompt">Prompt</button></li>
+      <li><button id="open">Open</button></li>
+      <li><button id="close">Close</button></li>
+      <li><button id="print">Print</button></li>
+    </ul>
+
+    <br /><br />
+    <hr />
+    <h2>Método scrool</h2>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+      quibusdam libero consectetur fugit? Temporibus atque eius eum voluptatum
+      rerum quisquam obcaecati, delectus tempore tenetur ab sequi consectetur ad
+      exercitationem ratione.
+    </p>
+    <p>
+      Assumenda alias provident architecto error nostrum aliquid molestiae nemo
+      ipsa molestias quos ex doloribus consequuntur suscipit mollitia iusto
+      temporibus, excepturi exercitationem neque, vitae non qui. Quaerat
+      deserunt similique quo totam.
+    </p>
+    <p>
+      Blanditiis architecto dolorum iure placeat dolore enim praesentium quos,
+      maxime veritatis accusamus corrupti nisi cupiditate, maiores vel quisquam!
+      Vero cumque dolore ducimus optio laudantium eos, assumenda sed
+      exercitationem quo delectus?
+    </p>
+    <p>
+      Quisquam amet quo asperiores veritatis commodi odit voluptatibus expedita
+      delectus quaerat. Expedita nihil iste, corrupti velit placeat odio facilis
+      ut rerum deserunt provident, quos culpa adipisci exercitationem nobis
+      numquam. Sed?
+    </p>
+    <p>
+      Accusamus, exercitationem. Deleniti voluptatem quis aliquam et?
+      Necessitatibus alias aut in corrupti quae voluptates eum amet libero
+      sapiente! Enim distinctio dolor corporis placeat consequuntur cum, aut
+      delectus ea earum quasi?
+    </p>
+    <p>
+      Accusamus, exercitationem. Deleniti voluptatem quis aliquam et?
+      Necessitatibus alias aut in corrupti quae voluptates eum amet libero
+      sapiente! Enim distinctio dolor corporis placeat consequuntur cum, aut
+      delectus ea earum quasi?
+    </p>
+    <p>
+        Accusamus, exercitationem. Deleniti voluptatem quis aliquam et?
+        Necessitatibus alias aut in corrupti quae voluptates eum amet libero
+        sapiente! Enim distinctio dolor corporis placeat consequuntur cum, aut
+        delectus ea earum quasi?
+      </p>
+      <p>
+        Accusamus, exercitationem. Deleniti voluptatem quis aliquam et?
+        Necessitatibus alias aut in corrupti quae voluptates eum amet libero
+        sapiente! Enim distinctio dolor corporis placeat consequuntur cum, aut
+        delectus ea earum quasi?
+      </p>
+      <p>
+        Accusamus, exercitationem. Deleniti voluptatem quis aliquam et?
+        Necessitatibus alias aut in corrupti quae voluptates eum amet libero
+        sapiente! Enim distinctio dolor corporis placeat consequuntur cum, aut
+        delectus ea earum quasi?
+      </p>
+      <p>
+        Accusamus, exercitationem. Deleniti voluptatem quis aliquam et?
+        Necessitatibus alias aut in corrupti quae voluptates eum amet libero
+        sapiente! Enim distinctio dolor corporis placeat consequuntur cum, aut
+        delectus ea earum quasi?
+      </p>
+      <p>
+        Accusamus, exercitationem. Deleniti voluptatem quis aliquam et?
+        Necessitatibus alias aut in corrupti quae voluptates eum amet libero
+        sapiente! Enim distinctio dolor corporis placeat consequuntur cum, aut
+        delectus ea earum quasi?
+      </p>
+      <p>
+        Accusamus, exercitationem. Deleniti voluptatem quis aliquam et?
+        Necessitatibus alias aut in corrupti quae voluptates eum amet libero
+        sapiente! Enim distinctio dolor corporis placeat consequuntur cum, aut
+        delectus ea earum quasi?
+      </p>
+    <script>
+      //BOM é uma maneira de interagir com o Browser
+
+      //innerHeight, innerWidth, outherHeight, outherWitdth, screenX e screenY
+
+      //innerHeight e innerWidth estão relacionados à área útil do browser
+      console.log(innerHeight); //O zoom pode afetar o tamanho da tela útil
+      console.log(innerWidth);
+
+      //outherHeight e outheridth estão relacionados ao tamsanho do browser
+      console.log(outerHeight);
+      console.log(outerWidth);
+
+      //screenX e screenY se refere à posição do browser na tela
+      console.log(screenX);
+      console.log(screenY);
+
+      //History - informações sobre navegação do usuário;
+      // Anda pelo histórico de navegação do usuário
+
+      document.getElementById("voltar").addEventListener("click", function () {
+        history.back(); //Avança
+      });
+      document.getElementById("avancar").addEventListener("click", function () {
+        history.forward(); //Retrocede
+      });
+
+      //pode-se tilizar também o history.go(-1) no caso do parâmetro, ao colocar menos 1, ele vai retroceder o histórico de navegação
+
+      //Location  informações sobre a URL
+      console.log(location);
+
+      //pegar a url completa
+      console.log(location.href);
+
+      //pegar o caminho da url
+      console.log(location.pathname);
+
+      //pegar os parâmetrios da url
+      console.log(location.search);
+
+      //regarregar a página
+      //console.log(location.reload())
+
+      //enviar para outra página
+      //console.log(location.assign("https://www.google.com")) altera o history do navegador
+      //console.log(location.reload("https://www.google.com")) não altera o history do navegador
+
+      //Navigator - informações sobre agente de usuário
+      console.log(navigator);
+      console.log(navigator.userAgent); //Verificar o agente de usuário
+      console.log(navigator.cookieEnabled); //verifica se os cookies estão ativos
+
+      //Screen -  informações sobre a tela (monitor, não o browser)
+      console.log(screen.width);
+      console.log(screen.height);
+      console.log(screen.availWidth);
+      console.log(screen.availHeight); //desconsidera a barra de tarefas do win
+
+      //Métodos window
+      var teste = "Carregando o window dessa página pelo método open";
+      console.log(opener); //Testar com iss
+      document.getElementById("alert").addEventListener("click", function () {
+        alert("Alerta"); //Dar um alerta para o usuário
+      });
+      document.getElementById("confirm").addEventListener("click", function () {
+        let confirma = confirm("Confirma?");
+        console.log(confirma); //Retorna um booleano
+      });
+      document.getElementById("prompt").addEventListener("click", function () {
+        const digite = prompt("Digite algo:");
+        console.log(digite); //Abre uma janela de edição
+      });
+      document.getElementById("open").addEventListener("click", function () {
+        open(
+          "http://127.0.0.1:5500/cursos_js_udemy/curso_js_iniciante_mestre/"
+        ); //Tomar cuidado, pois essa página poderá ter acesso ao window da página anterior
+      });
+      document.getElementById("close").addEventListener("click", function () {
+        close(); //Fecha a página
+      });
+      document.getElementById("print").addEventListener("click", function () {
+        print(); //Abre a página de impressão
+      });
+
+      //scrollTo(x, y) scroolBy(x, y) - propriedades úteis pageXoffset e pageYOffset ver informações de scrool fa página
+      //scrollTo(0, 600) //scrola horizontal 0 até 600 vertical
+
+      //scrollBy(0, 50)//scrola horizontal 0 até 50 vertical e vai somando ao valor anterior scrolado 50 + 50  para números negativos ele volta o scroll
+      console.log(pageXOffset) //Verifica o quanto scrolou horizontal
+      console.log(pageYOffset) //verifica o quanto scrolou horizontal
+
+    </script>
+  </body>
+</html>
