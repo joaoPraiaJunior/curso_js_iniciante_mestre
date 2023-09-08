@@ -26,9 +26,7 @@
     let itemDeMenuAtivo = menuDeNavegacao.querySelector(".actived");
     if (itemDeMenuAtivo) itemDeMenuAtivo.classList.remove("actived");
     let itemDeMenu = pegaUltimoElementoVisto(posicoes);
-    if (itemDeMenu) {
-      return itemDeMenu.classList.add("actived");
-    }
+    if (itemDeMenu) return itemDeMenu.classList.add("actived");
 
     return itensDeMenu[0].classList.add("actived");
   }
