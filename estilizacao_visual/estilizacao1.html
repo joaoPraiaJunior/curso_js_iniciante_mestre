@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estilização</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h1 {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        height: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="background-color: magenta; color: #fff">Estilização</h1>
+    <script>
+      //Propriedade style - let prop = elemento.style.propriedade ou elemento.sttyle.propriedade ="valor"
+
+      const h1 = document.querySelector("h1");
+      console.log(h1.style.backgroundColor);
+      console.log(h1.style.color);
+
+      h1.style.padding = "1rem";
+
+      console.log(h1.style.padding);
+      console.log((h1.style.position = "relative"));
+      console.log((h1.style.top = "1rem"));
+
+      //classList add(), remove(), toggle(), className
+
+      h1.classList.add("teste"); //Adiciona classe
+      h1.className = "teste2"; //subscreve a classe testeou outras que estejam já setadas
+      h1.classList.add("teste");
+      h1.classList.add("teste3");
+      h1.classList.remove("teste3"); //remove classe
+      h1.addEventListener("click", function () {
+        this.classList.toggle("teste4"); //utilizada para retirar e remover as classes
+      });
+
+      //Estilos computados - getComputedStyle()
+      console.log(getComputedStyle(h1).height); //Ele é um objeto do window
+      console.log(getComputedStyle(h1).display); //Os estilos setados pelo navegador também podem ser capturados
+
+      //Tamanho e posição no documento refrindo-se ao documento elemento.offsetHeight, elemento.offsetWidth, elemento.offsetLeft, elemento.offsetTop
+      console.log(h1.offsetWidth); //Relacionado à largura visível do elemento incluindo padding, border e scrollbar
+      console.log(h1.offsetHeight); //relacionado à altura visível do elemento incluindo padding, border e scrollbar
+      console.log(h1.offsetTop); //Relacionado à posição do elemento em referência ao topo mais a margin
+      console.log(h1.offsetLeft); //Relacionado à posição do elemento em referência à esquerda mais a margin
+
+      //clientHeight(), clientWidth(), clientTop(), clientLef()
+      console.log(h1.clientWidth); //Relacionado à largura interna do elemento
+      console.log(h1.clientHeight); //relacionado à altua interna do elemento
+      console.log(h1.clientTop); //Relacionado à posição do elemento em referência ao topo sem a margin
+      console.log(h1.clientLeft); //Relacionado à posição do elemento em referência à esquerda sem a margin
+
+      //Posição em relação ao viewport - elemento.getBoudingClinetRect() - bottom, left, right, top, width, height
+      console.log(h1.getBoundingClientRect());
+      console.log(h1.getBoundingClientRect().top);
+      console.log(h1.getBoundingClientRect().right);
+      console.log(h1.getBoundingClientRect().bottom);
+      console.log(h1.getBoundingClientRect().left);
+      console.log(h1.getBoundingClientRect().width);
+      console.log(h1.getBoundingClientRect().height);
+    </script>
+  </body>
+</html>
