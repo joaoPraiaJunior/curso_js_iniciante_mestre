@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM aula de eventos</title>
+  </head>
+  <body>
+    <h1>Eventos BOM</h1>
+    <img
+      src="https://images.pexels.com/photos/1972464/pexels-photo-1972464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt="código javascript"
+    />
+    <!--Para testar as diferenças do load e DOMContenLoaded, colocar no chrome para simular internet 3g lenta e desabilitar o cache-->
+    <script>
+      //load, DOMContentLoaded, resize, scroll, unload, beforeunload
+
+      //load
+      window.addEventListener("load", function () {
+        console.log("load"); //É disparado quando toda a página é carregada
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOMContentLoaded"); //É disparado quando a estutura do DOM é carregada
+      });
+
+      window.addEventListener("resize", function () {
+        console.log("resize", innerWidth, innerHeight); //Evento capta a alteração do tamanho da tela útil, melhor, quando o document view redimensionado
+        console.log(document);
+      });
+
+      window.addEventListener("scroll", function () {
+        console.log("scroll", pageYOffset); //Evento capta a scrolagem da página
+      });
+
+      //Eventos são um pouco problemáticos para usar unload e beforeunload os browsers meio que bloqueiam esse tipo de ação por causa do uso abusivo
+      window.addEventListener("unload", function () {
+        //debugger; //Utilizar debugger para ver como funciona
+        console.log("unload"); //Evento é disparado quando fecha a página
+      });
+
+      window.addEventListener("beforeunload", function () {
+        console.log("beforeunload"); //Evento é disparado quando fecha a página
+      });
+    </script>
+  </body>
+</html>
