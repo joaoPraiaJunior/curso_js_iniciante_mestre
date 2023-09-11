@@ -12,7 +12,7 @@ const cachorro = {
 cachorro.latir();
 
 const gato = {
-  nome: "ciames",
+  nome: "siamês",
   miar,
 };
 
