@@ -11,7 +11,7 @@ console.log(arr1.join(" - "));
 let concatenarArrays = arr1.concat(arr2, 5, "joao", true, ["olá", "mundo"]);
 console.log(concatenarArrays);
 
-//Para fazer uma cópia de um array para ser alerado
+//Para fazer uma cópia de um array para ser alterado
 let arr3 = [].concat(arr1);
 console.log((arr3[arr3.length] = "novo valor"));
 
