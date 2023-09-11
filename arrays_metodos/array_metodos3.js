@@ -15,4 +15,11 @@ console.log(concatenarArrays);
 let arr3 = [].concat(arr1);
 console.log((arr3[arr3.length] = "novo valor"));
 
-console.log(arr1, arr2, arr3)
+console.log(arr1, arr2, arr3);
+
+//Para juntar sub-arrays em um novo array único
+let arr4 = [1, 2, 3, [4, 5]];
+console.log(arr4.flat());
+let arr5 = [1, 2, [3, [4, 5, 6], 7], 8];
+console.log(arr5.flat(2)); // Os parâetros são o nível de profundidade. O padrão é um e tem o Infinity
+console.log(arr5.flat(Infinity), "Infinity");
