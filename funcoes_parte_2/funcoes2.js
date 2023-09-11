@@ -4,7 +4,7 @@
 const cachorro = {
   nome: "Dashround",
   latir() {
-    //No javascript moderno, a função pode ser declarda diretamente ao invés de latir: function(){}
+    //No javascript moderno, a função pode ser declarada diretamente ao invés de latir: function(){}
     console.log(this.nome, "au au");
   },
 };
