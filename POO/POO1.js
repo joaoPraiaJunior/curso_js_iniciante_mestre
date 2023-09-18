@@ -16,7 +16,12 @@
 //ES5 - sintaxe da função construtora e prototypes
 
 function Animal(tipo) {
-  if (tipo) this.tipo = tipo;
+  //Utilizar o instaceof para evitar que um objeto seja criado sem o operador new ou use o "use strict"
+  if (this instanceof Animal) {
+    if (tipo) this.tipo = tipo;
+  } else {
+    throw new Error("Um animal precisa ser criado com o operador new");
+  }
 }
 
 let cachorro = new Animal("canino");
@@ -66,6 +71,7 @@ console.log(Animal.prototype.obterTipo.call(sapo));
 console.log(cachorro.constructor);
 
 function Galinha(nome, tipo) {
+  //Não precisa chamar o tipo pelo parâmetro pois a Galinha
   this.nome = nome;
   Animal.call(this, tipo); //Herdou as propriedades da função construtora Animal
   //this.constructor = Galinha;
@@ -74,17 +80,29 @@ function Galinha(nome, tipo) {
   //     value: Galinha,
   //     enumerable: false,
   //   });
+
+  //Colocar um método dentro da função construtora faz com que cada vez que você crie um objeto, seja alocado na memória todas as vezes
+  this.ciscar = function () {
+    console.log(`${this.nome} está ciscando`);
+  };
 }
 //Aqui a galinha recebeu em seu protótipo o método obterTipo de Animal
 Galinha.prototype = new Animal();
 
+//Ao colocar um método no protótipo, faz com que o método seja colocar em um único local na memória
+Galinha.prototype.cacarejar = function () {
+  console.log(`${this.nome} está cacarejando`);
+};
 //A função construtora é galinha
 Galinha.prototype.constructor = Galinha;
+
+
 
 let carijo = new Galinha("carijo", "ave");
 console.log(carijo);
 console.log(carijo.obterTipo());
 console.log(carijo.constructor);
+
 
 for (let prop in carijo) {
   console.log(prop, "cadeia de protótipo"); //Leva em consideração a cadeia de protótipo
@@ -97,7 +115,6 @@ for (let prop in carijo) {
 }
 
 //instanceof vai mostrar se o objeto faz parte da cadeia de protótipo
-
 console.log(carijo instanceof Animal);
 console.log(carijo instanceof Galinha);
 
@@ -108,4 +125,10 @@ console.log(Animal.prototype.isPrototypeOf(carijo));
 //Verifica o protótipo do objeto carijo o qual é animal
 console.log(Object.getPrototypeOf(carijo));
 console.log(carijo.__proto__);
+//A propriedade __proto__ está obsoleta, utilizar agora getPrototypeOf(carijo)
 console.log(carijo.__proto__ === Object.getPrototypeOf(carijo));
+
+
+carijo.ciscar();
+
+carijo.cacarejar();
