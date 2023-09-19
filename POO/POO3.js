@@ -56,3 +56,4 @@ class Humano {
 const brasileiro = new Humano("brasileiro");
 console.log(brasileiro);
 console.log(Humano.andar());
+

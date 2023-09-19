@@ -9,8 +9,8 @@ Podem ter propriedades internas como arguments e name;
 
 // Funcoes declaradas
 
-function declarada() {
-  console.log("testando funcao");
+function declarada(teste) {
+  console.log(teste, "testando funcao");
 }
 
 // Hoisting: capacidade do javascript de 'içar' uma função declarada
@@ -28,4 +28,3 @@ const expressaoHoisting = function () {
 }
 
 expressaoHoisting();
-
