@@ -18,6 +18,7 @@
 function Animal(tipo) {
   //Utilizar o instaceof para evitar que um objeto seja criado sem o operador new ou use o "use strict"
   if (this instanceof Animal) {
+    //Essa condição faz com que olhe para oo protótipo e pegue o tipo que foi instânciado se não ele vai setar o desconhecido setado no prototype
     if (tipo) this.tipo = tipo;
   } else {
     throw new Error("Um animal precisa ser criado com o operador new");
@@ -40,7 +41,7 @@ Animal.prototype.obterTipo = function () {
 let gato = new Animal("felino");
 let cobra = new Animal("réptil");
 
-//Mesmo que dentro do objeto não exista o método, o js vai buscar um método na cadeia de protótipo de baixo ara cima.
+//Mesmo que dentro do objeto não exista o método, o js vai buscar um método na cadeia de protótipo de baixo para cima.
 console.log(cachorro.__proto__.__proto__ === Object.prototype);
 console.log(cachorro.obterTipo());
 console.log(gato.obterTipo());
@@ -96,13 +97,10 @@ Galinha.prototype.cacarejar = function () {
 //A função construtora é galinha
 Galinha.prototype.constructor = Galinha;
 
-
-
 let carijo = new Galinha("carijo", "ave");
 console.log(carijo);
 console.log(carijo.obterTipo());
 console.log(carijo.constructor);
-
 
 for (let prop in carijo) {
   console.log(prop, "cadeia de protótipo"); //Leva em consideração a cadeia de protótipo
@@ -127,7 +125,6 @@ console.log(Object.getPrototypeOf(carijo));
 console.log(carijo.__proto__);
 //A propriedade __proto__ está obsoleta, utilizar agora getPrototypeOf(carijo)
 console.log(carijo.__proto__ === Object.getPrototypeOf(carijo));
-
 
 carijo.ciscar();
 
