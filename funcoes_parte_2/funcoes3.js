@@ -1,7 +1,7 @@
 //Arrowfunctions, método de objeto, clousure, call(), apply(), bind(), encadear métodos, reveal pattern, factory, constructor
 
 //Closures
-//Closures é a capacidade da função de enchegar as variáveis que estavam ao redor dela no momento que foi criada
+//Closures é a capacidade da função de enchergar as variáveis que estavam ao redor dela no momento que foi criada
 const testantoClosure = (function () {
   let numero = 1;
   return function testandoClosures() {
@@ -59,7 +59,7 @@ const calculoRevealPattern = (function () {
   }
 
   function resultado() {
-    console.log(valorDoCalculo); //Aqui entra o conceito de closure. Afunção vai lembrar das variáveis criadas no seu escopo léxico
+    console.log(valorDoCalculo); //Aqui entra o conceito de closure. A função vai lembrar das variáveis criadas no seu escopo léxico
     return this;
   }
 
