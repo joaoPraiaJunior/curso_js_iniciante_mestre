@@ -3,8 +3,7 @@
 
 //IIFE para não sujar o escopo global
 (function () {
-  "use strict";
-
+  //"use strict" se utilizar o  modo estrito, o objeto global não poderá ser atualizado
   let raca = "";
   // const racasPermitidas = {
   //   dashround: 1,
@@ -35,7 +34,9 @@
   que o window é objeto global. No node pode-se usar this.cachorro = cachorro
   */
 
-  console.log(cachorro);
-  cachorro.raca = "viralata";
-  console.log(cachorro.raca);
+  this.cachorro = cachorro;
 })();
+
+console.log(cachorro);
+cachorro.raca = "viralata";
+console.log(cachorro.raca);
