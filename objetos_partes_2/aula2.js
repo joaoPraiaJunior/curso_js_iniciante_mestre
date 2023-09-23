@@ -26,7 +26,7 @@ console.log(Object.getOwnPropertyDescriptors(pessoa, "nome"));
 
 A saída é o value/valor que é João, writable/reescrita que pode ser reescrita,
 enumerable/enumerável que pode ser interavél com loop for in ou não ou configurável/configurable não permite que ela pode ser deletada
-ou configrada. A única configuração aceita é writable de true para false
+ou configurada. A única configuração aceita é writable de true para false
 */
 
 //Por esse método, pode-se definir uma nova proprieade para o objeto
