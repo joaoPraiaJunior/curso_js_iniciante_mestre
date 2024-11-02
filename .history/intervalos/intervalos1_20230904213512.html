@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula Intervalos</title>
+  </head>
+  <body>
+    <h1>Aula de intervalos</h1>
+    <script>
+      //setTimeout(fn, ms) setInterval(fn, ms) clearTimeout(id) clearInterval(id)
+
+      //setTimeout seta uma função para rodar uma única vez
+      //setInterval seta uma função para rodar de tempos em tempos
+
+      let numero = 0;
+
+      setTimeout(function () {
+        console.log("setTimeout");
+      });
+
+      const intervalo = setInterval(function () {
+        console.log("numero = ", numero++);
+
+        if (numero > 10) {
+          clearInterval(intervalo);
+          console.log("Fim");
+        }
+      }, 1000);
+
+      //O javascript uma linguagem single Thread um processo por vez é executado
+    </script>
+  </body>
+</html>
